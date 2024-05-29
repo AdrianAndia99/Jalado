@@ -2046,7 +2046,7 @@ MonoBehaviour:
   musicAudioSource: {fileID: 415222333}
   sfxAudioSource: {fileID: 2072081478}
   musicClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5662ce1f3084b7847aec4fea57452ab4, type: 3}
   - {fileID: 0}
   sfxClips:
   - {fileID: 0}
@@ -2098,8 +2098,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5269696454782043380, guid: fe50d3b21f6636145971ca62173b3797, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 5662ce1f3084b7847aec4fea57452ab4, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

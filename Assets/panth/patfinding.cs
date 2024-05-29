@@ -7,12 +7,12 @@ public class Pathfinding : MonoBehaviour
 {
 
 	PathRequestManager requestManager;
-	Grid grid;
+	GridPath grid;
 
 	void Awake()
 	{
 		requestManager = GetComponent<PathRequestManager>();
-		grid = GetComponent<Grid>();
+		grid = GetComponent<GridPath>();
 	}
 
 
@@ -76,6 +76,9 @@ public class Pathfinding : MonoBehaviour
 		requestManager.FinishedProcessingPath(waypoints, pathSuccess);
 
 	}
+
+
+
 
 	Vector3[] RetracePath(Node startNode, Node endNode)
 	{
