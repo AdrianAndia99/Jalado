@@ -4,6 +4,7 @@ public class DificultySelectorController : MonoBehaviour
 {
     public UnityEvent assingButtons;
     DoubleLinkedCircularList<GameObject> buttons = new DoubleLinkedCircularList<GameObject>();
+    private int current;
     private void Awake()
     {
         assingButtons?.Invoke();
@@ -13,8 +14,8 @@ public class DificultySelectorController : MonoBehaviour
     {
         buttons.InsertNodeAtEnd(button);
     }
-    public void Print()
+    public void NextButton()
     {
-        //for(int i = 0; i < buttons.)
+
     }
 }

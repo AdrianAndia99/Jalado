@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GridPath : MonoBehaviour
+public class GridCode : MonoBehaviour
 {
 
 	public bool displayGridGizmos;
@@ -88,10 +88,14 @@ public class GridPath : MonoBehaviour
 		Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
 		if (grid != null && displayGridGizmos)
 		{
-			foreach (Node n in grid)
+			for (int x = 0; x < gridSizeX; x++)
 			{
-				Gizmos.color = (n.walkable) ? Color.white : Color.red;
-				Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+				for (int y = 0; y < gridSizeY; y++)
+				{
+					Node n = grid[x, y];
+					Gizmos.color = (n.walkable) ? Color.white : Color.red;
+					Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+				}
 			}
 		}
 	}
