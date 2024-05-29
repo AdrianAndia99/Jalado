@@ -6,6 +6,7 @@ public class UIManagerController : MonoBehaviour
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject credits;
+    [SerializeField] private GameObject ui;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -40,6 +41,14 @@ public class UIManagerController : MonoBehaviour
     public void DisableCreditsWindow()
     {
         credits.SetActive(false);
+    }
+    public void DisableUI()
+    {
+        ui.SetActive(false);
+    }
+    public void ActiveUI()
+    {
+        ui.SetActive(true);
     }
 }
 
