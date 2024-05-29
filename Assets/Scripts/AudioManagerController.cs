@@ -13,6 +13,7 @@ public class AudioManagerController : MonoBehaviour
     [SerializeField] private AudioClip[] musicClips;
     [SerializeField] private AudioClip[] sfxClips;
     [SerializeField] private AudioSettings audioSettings;
+    //Getters y Setters
     public Slider MusicConfiguration
     {
         get 
@@ -23,7 +24,6 @@ public class AudioManagerController : MonoBehaviour
         { musicConfiguration = value; 
         }
     }
-
     public Slider SFXConfiguration
     {
         get 
@@ -35,7 +35,6 @@ public class AudioManagerController : MonoBehaviour
             sfxConfiguration = value; 
         }
     }
-
     public Slider MasterConfiguration
     {
         get 
@@ -45,18 +44,6 @@ public class AudioManagerController : MonoBehaviour
         set 
         { 
             masterConfiguration = value; 
-        }
-    }
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
     public AudioSource MusicAudioSource
@@ -80,6 +67,19 @@ public class AudioManagerController : MonoBehaviour
             return sfxClips;
         }
     }
+    //Unity Metods
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    //My Metods
     public void SaveAudioSettings()
     {
         audioSettings.musicVolume = musicConfiguration.value;
@@ -117,9 +117,5 @@ public class AudioManagerController : MonoBehaviour
     public void PlaySfx(int index)
     {
         sfxAudioSource.PlayOneShot(sfxClips[index]);
-    }
-    public float GetSfxLength(int index)
-    {
-        return sfxClips[index].length;
     }
 }

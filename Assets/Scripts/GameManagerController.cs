@@ -13,7 +13,6 @@ public class GameManagerController : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
     public void ChangeScene(string sceneName)
